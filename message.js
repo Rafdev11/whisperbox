@@ -75,11 +75,11 @@ messageForm.addEventListener("submit", async (event) => {
 
     messageInput.value = "";
 
-    // Show an invitation after successful message delivery.
     // Remove the previous invitation to avoid duplicates.
     const oldInvite = document.getElementById("whisperbox-invite");
     if (oldInvite) oldInvite.remove();
 
+    // Create the invitation.
     const invite = document.createElement("div");
     invite.id = "whisperbox-invite";
 
@@ -105,7 +105,7 @@ messageForm.addEventListener("submit", async (event) => {
         and discover what they have to say!
       </p>
 
-      <a href="signup.html"
+      <a href="index.html"
          style="
            display:inline-block;
            background:#8b5cf6;
