@@ -74,6 +74,56 @@ messageForm.addEventListener("submit", async (event) => {
       "Your anonymous message was sent successfully! 💜";
 
     messageInput.value = "";
+
+    // Show an invitation after successful message delivery.
+    // Remove the previous invitation to avoid duplicates.
+    const oldInvite = document.getElementById("whisperbox-invite");
+    if (oldInvite) oldInvite.remove();
+
+    const invite = document.createElement("div");
+    invite.id = "whisperbox-invite";
+
+    invite.style.cssText = `
+      margin-top: 20px;
+      padding: 24px;
+      background: #241633;
+      border: 1px solid #8b5cf6;
+      border-radius: 16px;
+      text-align: center;
+      color: white;
+    `;
+
+    invite.innerHTML = `
+      <h2 style="color:#c084fc; margin-bottom:12px;">
+        💜 Create Your Own WhisperBox
+      </h2>
+
+      <p style="line-height:1.6; margin-bottom:20px;">
+        Want to receive anonymous messages too? 🤫💌
+        <br>
+        Create your own link, share it with friends,
+        and discover what they have to say!
+      </p>
+
+      <a href="signup.html"
+         style="
+           display:inline-block;
+           background:#8b5cf6;
+           color:white;
+           padding:14px 24px;
+           border-radius:10px;
+           text-decoration:none;
+           font-weight:bold;
+         ">
+        Create Your Own Link 💜 →
+      </a>
+
+      <p style="font-size:12px; color:#c4addb; margin-top:18px;">
+        Powered by Abdulrafiu 💜
+      </p>
+    `;
+
+    messageStatus.insertAdjacentElement("afterend", invite);
   }
 
   sendButton.disabled = false;
