@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Send an Anonymous Message | WhisperBox</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="message-page">
+
+    <div class="message-card">
+
+      <div class="message-logo">💜 WhisperBox</div>
+
+      <div class="message-avatar">💌</div>
+
+      <h1 id="recipient-name">Loading...</h1>
+
+      <p class="message-description">
+        Send me an anonymous message!
+        I won't know who sent it. 🤫
+      </p>
+
+      <form id="message-form">
+
+        <label for="message">
+          Your anonymous message
+        </label>
+
+        <textarea
+          id="message"
+          placeholder="Type your secret message here..."
+          maxlength="500"
+          rows="6"
+          required
+        ></textarea>
+
+        <p class="message-limit">
+          Maximum 500 characters
+        </p>
+
+        <button type="submit" id="send-button">
+          Send Anonymous Message 💌
+        </button>
+
+      </form>
+
+      <p id="message-status" role="status"></p>
+
+      <p class="message-footer">
+        Powered by Abdulrafiu 💜
+      </p>
+
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="message.js"></script>
+
+</body>
+</html>

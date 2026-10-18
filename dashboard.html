@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard — WhisperBox</title>
+
+  <!-- MAIN WEBSITE CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- DASHBOARD DESIGN -->
+  <link rel="stylesheet" href="dashboard-theme.css">
+
+  <!-- MOBILE & LUXURY BACKGROUND -->
+  <link rel="stylesheet" href="whisperbox-mobile-luxury.css">
+</head>
+
+<body class="wb-dashboard">
+
+  <div class="dash-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="dash-sidebar">
+
+      <a href="index.html" class="dash-logo">
+        💜 Whisper<span>Box</span>
+      </a>
+
+      <p class="dash-tagline">
+        Say it. Stay Anonymous. 💜
+      </p>
+
+      <nav class="dash-nav" aria-label="Dashboard navigation">
+
+        <a href="#dashboard-top" class="active">
+          ⌂ &nbsp; Dashboard
+        </a>
+
+        <a href="#my-inbox">
+          ✉ &nbsp; My Messages
+        </a>
+
+        <button id="logout" type="button">
+          ↪ &nbsp; Log out
+        </button>
+
+      </nav>
+
+      <p class="dash-credit">
+        Powered by Abdulrafiu 💜
+      </p>
+
+    </aside>
+
+    <!-- MAIN DASHBOARD -->
+    <main class="dash-main" id="dashboard-top">
+
+      <header class="dash-header">
+
+        <div>
+          <p class="dash-overline">
+            YOUR PRIVATE SPACE
+          </p>
+
+          <h1>Welcome back! 💜</h1>
+
+          <p id="welcome">
+            Loading your account...
+          </p>
+        </div>
+
+        <div class="dash-profile-bubble" aria-hidden="true">
+          💌
+        </div>
+
+      </header>
+
+      <!-- PERSONAL ANONYMOUS LINK -->
+      <section
+        class="dash-share-panel"
+        aria-labelledby="share-heading"
+      >
+
+        <div class="dash-share-content">
+
+          <h2 id="share-heading">
+            🔗 Your Anonymous Link
+          </h2>
+
+          <p>
+            Share your link so anyone can send you
+            an anonymous message.
+          </p>
+
+          <div class="dash-link-row">
+
+            <input
+              id="profile-link"
+              type="text"
+              readonly
+              aria-label="Your anonymous message link"
+            >
+
+            <button
+              id="copy-link"
+              type="button"
+              class="dash-primary"
+            >
+              Copy Link 🔗
+            </button>
+
+          </div>
+
+          <!-- SOCIAL SHARING -->
+          <div class="dash-social-row">
+
+            <button
+              id="share-whatsapp"
+              type="button"
+              class="dash-social whatsapp"
+            >
+              WhatsApp
+            </button>
+
+            <button
+              id="share-native"
+              type="button"
+              class="dash-social"
+            >
+              ↗ Share
+            </button>
+
+          </div>
+
+          <p
+            id="dashboard-message"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+        </div>
+
+      </section>
+
+      <!-- MESSAGE STATISTICS -->
+      <section
+        class="dash-stats"
+        aria-label="Message statistics"
+      >
+
+        <div class="dash-stat">
+
+          <span class="dash-stat-icon">💌</span>
+
+          <div>
+            <p>Total Messages</p>
+            <strong id="total-messages">0</strong>
+          </div>
+
+        </div>
+
+        <div class="dash-stat">
+
+          <span class="dash-stat-icon">🔔</span>
+
+          <div>
+            <p>Unread Messages</p>
+            <strong id="unread-messages">0</strong>
+          </div>
+
+        </div>
+
+        <div class="dash-stat">
+
+          <span class="dash-stat-icon">✓</span>
+
+          <div>
+            <p>Read Messages</p>
+            <strong id="read-messages">0</strong>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- PRIVATE INBOX -->
+      <section
+        class="inbox-section"
+        id="my-inbox"
+      >
+
+        <div class="dash-inbox-heading">
+
+          <div>
+            <h2>💌 My Anonymous Inbox</h2>
+
+            <p>
+              Messages sent to you appear here.
+              Senders stay anonymous.
+            </p>
+          </div>
+
+          <button
+            id="refresh-inbox"
+            type="button"
+          >
+            ↻ Refresh Messages
+          </button>
+
+        </div>
+
+        <p id="inbox-status" role="status">
+          Loading your messages...
+        </p>
+
+        <div id="inbox-list"></div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script src="supabase-config.js"></script>
+
+  <!-- EXISTING DASHBOARD FUNCTIONALITY -->
+  <script src="dashboard.js"></script>
+
+  <!-- DASHBOARD SHARING & STATISTICS -->
+  <script src="dashboard-ui.js"></script>
+
+</body>
+</html>

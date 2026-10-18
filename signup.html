@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — WhisperBox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="auth-page">
+    <div class="auth-card">
+      <a href="index.html" class="auth-brand">
+        ✦ WhisperBox
+      </a>
+
+      <h1>Create your account</h1>
+      <p>Start receiving honest anonymous messages.</p>
+
+      <form id="signup-form">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="e.g. raf"
+          minlength="3"
+          maxlength="20"
+          pattern="[a-z0-9_]{3,20}"
+          required
+        >
+
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="you@example.com"
+          required
+        >
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="At least 8 characters"
+          minlength="8"
+          required
+        >
+
+        <button type="submit" class="btn primary">
+          Create account
+        </button>
+      </form>
+
+      <p id="auth-message" role="status" aria-live="polite"></p>
+
+      <p class="auth-switch">
+        Already have an account?
+        <a href="login.html">Log in</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
